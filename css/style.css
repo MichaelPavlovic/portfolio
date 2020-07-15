@@ -458,7 +458,7 @@ h3 {
   font-weight: var(--fw-bold);
   padding: 0.8em 1.4em;
   margin: 0.5em;
-  border: 1px solid var(--clr-accent);
+  border: 2px solid var(--clr-accent);
   border-radius: 25px;
   text-decoration: none;
 }
@@ -467,7 +467,6 @@ h3 {
   color: var(--clr-light);
 }
 .disabled {
-
   font-weight: var(--fw-bold);
   padding: 0.8em 1.4em;
   margin: 0.5em;
