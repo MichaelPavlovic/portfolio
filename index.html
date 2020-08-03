@@ -6,36 +6,33 @@
     <title>Michael Pavlovic</title>
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/flickity.css">
   </head>
   <body>
     <header class="header">
       <h2 class="hidden">Main navigation</h2>
-      <div>
-        <span class="logo"><a href="#">Michael Pavlovic</a></span>
-      </div>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#" class="nav__link animated__link">Home</a></li>
-          <li class="nav__item"><a href="#about" class="nav__link animated__link">About</a></li>
-          <li class="nav__item"><a href="#projects" class="nav__link animated__link">Projects</a></li>
-          <li class="nav__item"><a href="#contact" class="nav__link animated__link">Contact</a></li>
-        </ul>
-      </nav>
       <button class="nav-toggle" aria-label="toggle navigation"><span class="hamburger"></span></button>
       <nav class="responsivenav">
         <ul class="responsivenav__list">
           <li class="responsivenav__item"><a href="#" class="responsivenav__link animated__link">Home</a></li>
           <li class="responsivenav__item"><a href="#about" class="responsivenav__link animated__link">About</a></li>
+          <li class="responsivenav__item"><a href="#skills" class="responsivenav__link animated__link">Skills</a></li>
           <li class="responsivenav__item"><a href="#projects" class="responsivenav__link animated__link">Projects</a></li>
           <li class="responsivenav__item"><a href="#contact" class="responsivenav__link animated__link">Contact</a></li>
         </ul>
       </nav>
     </header>
     <main>
+      <div id="particles-js"></div>
       <span id="back-to-top"><i class="fas fa-caret-square-up" title="Back to top"></i></span>
       <section class="intro section", id="intro">
-        <h1 class="intro__title">Hi, I'm <span>Michael Pavlovic</span></h1>
-        <p class="intro__job">Web Developer</p>
+        <h1 class="intro__title">Hi, I'm <span class="intro__name">Michael</span></h1>
+        <span class="intro__job">Full Stack Web Developer</span>
+        <ul class="social__list">
+          <li class="social__item"><a class="social__link" href="mailto:michael@michaelpavlovic.ca" title="Email"><i class="fas fa-envelope"></i></a></li>
+          <li class="social__item"><a class="social__link" href="https://www.linkedin.com/in/michaelpavlovic/" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+          <li class="social__item"><a class="social__link" href="https://github.com/MichaelPavlovic" title="Github"><i class="fab fa-github"></i></a></li>
+        </ul>
         <a href="#about" class="intro__scroll" id="scroll-animation">
           <div class="mouse" id="mouse">
             <span></span>
@@ -45,35 +42,81 @@
           </div>
         </a>
       </section>
-      <section id="about" class="about section" id="about">
-        <h2 class="about__title section__title">About</h2>
+      <section id="about" class="about section">
+        <h2 class="section__title">About</h2>
         <span class="big-underline"></span>
         <span class="underline"></span>
         <div class="about__flex">
           <div class="about__col">
-            <h3>Who I am</h3>
-            <p>I'm a full stack web developer from Toronto, Canada. My educational background is in IT where I currently hold a Bachelor's degree. I have spent the last year studying 
-              Web Development in the Humber College Web Development program. Although most of my time is spent behind a computer screen, I also love music and playing guitar.</p>
+            <p>I'm a Web Developer from Toronto, Canada.</p>
+            <p>I develop full stack web applications while keeping responsive design and best practices in mind.</p>
+            <p>Although most of my time is spent behind a computer screen, I also love music and playing guitar.</p>
+            <p>I'm always open to new opportunities, so feel free to reach out if you are interested in working together.</p>
           </div>
-          <div class="about__col">
-            <h3>What I do</h3>
-            <p>I have experience developing full stack web applications in PHP and ASP.NET MVC. My interests currently lie in front end 
-              development and I particularly enjoy working with JavaScript, so I'm in the process of learning Vue.js and the MERN stack. However, I'm still open to 
-              any full stack opportunities.</p>
+          <div class="about__col img__col">
+            <img src="img/toronto.jpg" alt="Toronto skyline at night with fireworks" class="about__img">
           </div>
         </div>
       </section>
-      <section class="projects section" id="projects">
-        <h2 class="projects__title section__title">Projects</h2>
+      <section id="skills" class="skills section">
+        <h2 class="section__title">Skills</h2>
         <span class="big-underline"></span>
         <span class="underline"></span>
-        <div class="flex-grid" id="project-grid">
+        <div class="skills__container">
+          <div class="skills__item">
+            <i class="fab fa-html5 skill__icon"></i>
+            <p class="skill__title">HTML</p>
+          </div>
+          <div class="skills__item">
+            <i class="fab fa-css3-alt skill__icon"></i>
+            <p class="skill__title">CSS</p>
+          </div>
+          <div class="skills__item">
+            <i class="fab fa-js-square skill__icon"></i>
+            <p class="skill__title">JavaScript</p>
+          </div>
+          <div class="skills__item">
+            <i class="fab fa-php skill__icon"></i>
+            <p class="skill__title">PHP</p>
+          </div>
+          <div class="skills__item">
+            <i class="fas fa-database skill__icon"></i>
+            <p class="skill__title">MySQL</p>
+          </div>
+          <div class="skills__item">
+            <i class="fab fa-node skill__icon"></i>
+            <p class="skill__title">Node.js</p>
+          </div>
+          <div class="skills__item">
+            <i class="fab fa-react skill__icon"></i>
+            <p class="skill__title">React</p>
+          </div>
+          <div class="skills__item">
+            <i class="fab fa-vuejs skill__icon"></i>
+            <p class="skill__title">Vue</p>
+          </div>
+          <div class="skills__item">
+            <i class="fab fa-bootstrap skill__icon"></i>
+            <p class="skill__title">Bootstrap</p>
+          </div>
+        </div>
+      </section>
+      <section id="projects" class="projects section">
+        <h2 class="section__title">Projects</h2>
+        <span class="big-underline"></span>
+        <span class="underline"></span>
+        <div class="carousel" data-flickity='{ "accessibility": true }'>
           <div class="col">
             <img src="img/iss.png" alt="International Space Station tracker project" class="project__img">
             <div class="project__text">
               <p>International Space Station tracker built with vanilla JavaScript, Google Maps and some other APIs. It allows you to view the 
                 current location of the ISS plotted on a map or enter a set of coordinates to see up to 5 pass over times for that location.</p>
-              <p><strong>Technologies used:</strong> HTML, CSS, JavaScript, Bootstrap 4</p>
+              <div>
+                <i class="fab fa-html5 project__icon"></i>
+                <i class="fab fa-css3-alt project__icon"></i>
+                <i class="fab fa-js-square project__icon"></i>
+                <i class="fab fa-bootstrap project__icon"></i>
+              </div>
               <p><a href="https://github.com/MichaelPavlovic/API-Project" class="animated__link">Github link</a></p>
               <a href="https://iss.michaelpavlovic.ca/" class="project__button">Live project <i class="fas fa-angle-double-right"></i></a>
             </div>
@@ -82,7 +125,11 @@
             <img src="img/weather.png" alt="Vue weather project" class="project__img">
             <div class="project__text">
               <p>Simple weather app built with Vue.js and the openweathermap API. Displays basic weather information and a 5 day forecast for a given location.</p>
-              <p><strong>Technologies used:</strong> Vue.js, CSS, JavaScript</p>
+              <div>
+                <i class="fab fa-vuejs project__icon"></i>
+                <i class="fab fa-css3-alt project__icon"></i>
+                <i class="fab fa-js-square project__icon"></i>
+              </div>
               <p><a href="https://github.com/MichaelPavlovic/vue-weather" class="animated__link">Github link</a></p>
               <a href="https://weather.michaelpavlovic.ca/" class="project__button">Live project <i class="fas fa-angle-double-right"></i></i></a>
             </div>
@@ -92,7 +139,10 @@
             <div class="project__text">
               <p>An application built for the Discord platform with the primary functionality being music and moderation commands. It also has a variety of other 
                 features including, displaying weather data, covid-19 statistics, and server/user info.</p>
-              <p><strong>Technologies used:</strong> Node.js, JavaScript, Discord.js</p>
+                <div>
+                  <i class="fab fa-node project__icon"></i>
+                  <i class="fab fa-js-square project__icon"></i>
+                </div>
               <p><a href="https://github.com/MichaelPavlovic/DiscordBot-V12" class="animated__link">Github link</a></p>
               <a href="https://www.youtube.com/watch?v=zYiaY8B6aVQ" class="project__button">Live Preview <i class="fas fa-angle-double-right"></i></a>
             </div>
@@ -102,7 +152,13 @@
             <div class="project__text">
               <p>A survey website that allows you to sign up for an account and create or take surveys based on the likert scale. I was primarily responsible for 
                 developing the dynamic header, the home page and the CRUD functionality for the home page.</p>
-              <p><strong>Technologies used:</strong> PHP, MySQL, HTML, CSS, Bootstrap</p>
+                <div>
+                  <i class="fab fa-html5 project__icon"></i>
+                  <i class="fab fa-css3-alt project__icon"></i>
+                  <i class="fab fa-bootstrap project__icon"></i>
+                  <i class="fab fa-php project__icon"></i>
+                  <i class="fas fa-database project__icon"></i>
+                </div>
               <p><a href="https://github.com/MichaelPavlovic/SurveyBobby" class="animated__link">Github link</a></p>
               <a href="http://knx.jmn.mybluehost.me/curiousraccoons/" class="project__button">Live project <i class="fas fa-angle-double-right"></i></a>
             </div>
@@ -111,7 +167,10 @@
             <img src="img/game.png" alt="Tic-tac-tie Vue project" class="project__img">
             <div class="project__text">
               <p>A basic tic-tac-toe game built with the Vue.js framework.</p>
-              <p><strong>Technologies used:</strong> Vue.js, CSS</p>
+              <div>
+                <i class="fab fa-vuejs project__icon"></i>
+                <i class="fab fa-css3-alt project__icon"></i>
+              </div>
               <p><a href="https://github.com/MichaelPavlovic/tic-tac-toe" class="animated__link">Github link</a></p>
               <a href="https://tic-tac-toe.michaelpavlovic.ca/" class="project__button">Live project <i class="fas fa-angle-double-right"></i></a>
             </div>
@@ -119,28 +178,39 @@
           <div class="col">
             <img src="img/socialmedia.png" alt="Social media project" class="project__img">
             <div class="project__text">
-              <p>A fictional social media site loosely based on twitter. Built with React on the front end and Firebase/Express for back end API. Feel free to make a new 
-                account or use the credentials: test@gmail.com/123456.
+              <p>A fictional social media site loosely based on twitter. Built with React/Redux on the front-end and Firebase/Express for the back-end API. Test credentials: test@gmail.com/123456.
               </p>
-              <p><strong>Technologies used:</strong> React, Redux, CSS, Material UI, Express, Firebase (cloud functions, authentication, storage bucket)</p>
+              <div>
+                <i class="fab fa-react project__icon"></i>
+                <i class="fab fa-css3-alt project__icon"></i>
+              </div>
               <p><a href="https://github.com/MichaelPavlovic/socialmedia" class="animated__link">Github link</a></p>
               <a href="https://socialmedia-7c417.firebaseapp.com/login" class="project__button">Live project <i class="fas fa-angle-double-right"></i></a>
             </div>
           </div>
         </div>
       </section>
+      <section id="contact">
+        <h3 class="contact__title">Contact Me</h3>
+        <form action="https://formspree.io/xqkynlkz" method="POST">
+          <label for="name" class="hidden">Name:</label>
+          <input id="name" type="text" name="name" placeholder="Name" class="input">
+          <label for="email" class="hidden">Email:</label>
+          <input id="email" type="text" name="_replyto" placeholder="Email" class="input">
+          <label for="message" class="hidden">Message:</label>
+          <textarea id="message" name="message" placeholder="Message" class="input"></textarea>
+          <button type="submit" class="submit">Send <i class="fas fa-paper-plane"></i></button>
+        </form>
+      </section>
     </main>
-    <footer class="footer" id="contact">
-      <a href="mailto:mail@michaelpavlovic.ca" class="animated__link">michael@michaelpavlovic.ca</a>
-      <ul class="social__list">
-        <li class="social__item"><a class="social__link" href="https://www.linkedin.com/in/michaelpavlovic/" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-        <li class="social__item"><a class="social__link" href="https://github.com/MichaelPavlovic" title="Github"><i class="fab fa-github"></i></a></li>
-      </ul>
+    <footer class="footer">
       <p class="copyright">&copy; 2020 Michael Pavlovic</p>
     </footer>
     <!-- scripts -->
+    <script src="js/particles.js"></script>
     <script src="js/navtoggle.js"></script>
     <script src="js/backToTop.js"></script>
     <script src="js/animations.js"></script>
+    <script src="js/flickity.pkgd.min.js"></script>
   </body>
 </html>

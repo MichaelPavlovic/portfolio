@@ -9,4 +9,6 @@ window.addEventListener('load', () => {
             scrollAnimation.style.display = "flex";
         }
     });
+
+    particlesJS.load('particles-js', 'particlesjs-config.json');
 });

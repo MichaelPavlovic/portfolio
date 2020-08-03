@@ -16,8 +16,9 @@
   --fw-boldest: 900;
     
   --clr-light: #ffffff;
-  --clr-dark: #222831;
+  --clr-dark: #1F1F23;
   --clr-accent: #5d92d8;
+  --clr-accent2: #729dd6;
   --clr-highlight: #7289da79;
     
   --fs-h1: 3rem;
@@ -83,29 +84,7 @@ h3 {
   padding: 1em;
   width: 100%;
   position: fixed;
-  background-color: var(--clr-dark);
   z-index: 1;
-  box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.2);
-}
-.logo {
-  font-weight: var(--fw-bold);
-}
-.logo a {
-  color: inherit;
-  text-decoration: none;
-}
-.nav a {
-  font-weight: var(--fw-reg);
-  padding-bottom: 0.2em;
-}
-.nav__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.nav__item {
-  display: inline;
-  padding-right: 1.5em;
 }
 /* responsive nav and hamburger icon based off of https://www.freecodecamp.org/news/build-and-deploy-your-own-personal-portfolio-site/ */
 .responsivenav {
@@ -151,6 +130,9 @@ h3 {
   top: 1em;
   z-index: 1000;
 }
+.nav-toggle:focus {
+  outline: 1px solid var(--clr-accent);
+}
 .nav-open .responsivenav {
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
@@ -176,7 +158,7 @@ h3 {
   opacity: 0;
 }
 .hamburger {
-  display: none;
+  display: block;
   position: relative;
 }
 .hamburger,
@@ -199,12 +181,22 @@ h3 {
 .hamburger::after { bottom: 6px; }
 
 /**** Main ****/
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+#particles-js {
+  position: absolute;
+ 	width: 100%;
+ 	height: 100%;
+}
 .section {
   text-align: center;
   padding: 1em 0;
   font-family: var(--ff-secondary);
 }
 .section__title {
+  text-align: center;
   padding-top: 1em;
   padding-bottom: 0.3em;
   text-transform: uppercase;
@@ -236,18 +228,33 @@ h3 {
 }
 .intro__title {
   font-family: var(--ff-primary);
-  font-weight: var(--fw-reg);
+  font-weight: var(--fw-bold);
 }
-.intro__title span {
+.intro__name {
   color: var(--clr-accent);
-  font-style: italic;
 }
 .intro__job {
-  padding-top: 0.6em;
   font-size: 20pt;
-  margin-bottom: 8em;
   font-family: var(--ff-primary);
   font-weight: var(--fw-ligher);
+}
+.social__list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 2em 0 0;
+  padding: 0;
+}
+.social__item {
+  margin: 0 0.5em;
+}
+.social__link {
+  color: var(--clr-light);
+  padding: 0.5em;
+  font-size: 22pt;
+}
+.social__link:hover {
+  color: var(--clr-accent);
 }
 /* scroll animation based off of https://www.youtube.com/watch?v=zZNcdwXshU0 */
 .intro__scroll {
@@ -407,38 +414,82 @@ h3 {
 .about__flex {
   display: flex;
   flex-direction: row;
-  background-color: rgba(90, 90, 90, 0.3);
   width: 1100px;
   margin: 0 auto;
-  border-radius: 14px;
   margin-top: 2em;
 }
 .about__col {
-  padding: 2em;
+  padding: 1.5em;
   width: 50%;
-}
-.about__col h3 {
-  margin-bottom: 1em;
-  font-weight: var(--fw-bolder);
-}
-.about__col p {
+  text-align: left;
   font-weight: var(--fw-ligher);
+}
+.about__img {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  display: block;
+  margin: 0 auto;
+}
+/* skills section */
+.skills__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 100vmin;
+  grid-gap: 1em;
+  margin: 0 auto;
+  padding-top: 3em;
+}
+.skill__icon {
+  font-size: 40pt;
+}
+.skill__title {
+  font-weight: var(--fw-bold);
+}
+.fa-html5 {
+  color: #e44d27;
+}
+.fa-css3-alt {
+  color: #369ad6;
+}
+.fa-js-square {
+  color: #f0db4f;
+}
+.fa-php {
+  color: #007AFF;
+}
+.fa-database {
+  color: #E48E00;
+}
+.fa-node {
+  color: #7fbd02;
+}
+.fa-react {
+  color: #60dbfb;
+}
+.fa-vuejs {
+  color: #3FB984;
+}
+.fa-bootstrap {
+  color: #553B7D;
 }
 /* projects section */
-.flex-grid {
-  display: flex;
+.carousel {
+  width: 100%;
   margin: 0 auto;
-  flex-wrap: wrap;
-  width: 1500px;
 }
 .col {
-  flex-grow: 1;
-  width: 40%;
-  padding: 2em;
+  width: 60%;
+  padding: 5em;
   font-weight: var(--fw-ligher);
 }
+.flickity-enabled:focus .flickity-viewport {
+  outline: 1px solid var(--clr-accent);
+}
 .project__img {
-  width: 100%;
+  margin: 0 auto;
+  width: 65%;
   height: auto;
   border-radius: 13px;
   box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.7);
@@ -450,8 +501,9 @@ h3 {
 .col p {
   margin: 1.5em 0;
 }
-.last-col {
-  padding: 2em 15em;
+.project__icon {
+  padding: 0.3em;
+  font-size: 32pt;
 }
 .project__button {
   color: var(--clr-accent);
@@ -459,7 +511,7 @@ h3 {
   padding: 0.8em 1.4em;
   margin: 0.5em;
   border: 2px solid var(--clr-accent);
-  border-radius: 25px;
+  border-radius: 12px;
   text-decoration: none;
 }
 .project__button:hover {
@@ -520,36 +572,68 @@ h3 {
   -o-transform: scaleX(1);
   transform: scaleX(1);
 }
-
+/****** contact form ******/
+.contact__title {
+  font-weight: var(--fw-ligt);
+  text-align: center;
+  margin-top: 1em;
+  margin: 0;
+  padding-top: 3em;
+}
+form { 
+  max-width:420px; 
+  margin:30px auto; 
+}
+.input {
+  color: var(--clr-light);
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-reg);
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border: 2px solid var(--clr-highlight);
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  outline:0;
+}
+.input:focus { 
+  border: 2px solid var(--clr-accent); 
+}
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+.submit {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-bold);
+  width: 100%;
+  background: var(--clr-highlight);
+  border-radius: 5px;
+  border: 0;
+  color: var(--clr-light);
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  cursor: pointer;
+}
+.submit:hover { 
+  background: var(--clr-accent); 
+}
 /***** Footer ******/
 .footer {
   color: var(--clr-light);
   text-align: center;
   padding: 3em 0 1em 0;
 }
-.footer a {
-  color: inherit;
-  text-decoration: none;
-}
-.social__list {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin: 2em 0 0;
-  padding: 0;
-}
-.social__item {
-  margin: 0 0.5em;
-}
-.social__link {
-  padding: 0.5em;
-  font-size: 22pt;
-}
-.social__link:hover {
-  color: var(--clr-accent);
-}
 .copyright {
   font-weight: var(--fw-light);
+  font-size: 0.9em;
 }
 
 /***** Media queries *****/
@@ -591,12 +675,6 @@ h3 {
   }
 }
 @media (max-width: 800px) {
-  .hamburger {
-    display: block;
-  }
-  .nav {
-    display: none;
-  }
   .about__flex {
     flex-direction: column;
     width: 500px;
